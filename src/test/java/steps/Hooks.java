@@ -12,9 +12,9 @@ import utils.ScreenshotUtil;
 import java.text.Normalizer;
 
 import static utils.AllureReportSetup.prepareAllureResultsFolder;
-import static utils.Log.INFO;
+import static utils.Logger.INFO;
 
-public class Hooks {
+    public class Hooks {
 
     private static boolean isFirstExecution = true;
 
@@ -45,10 +45,12 @@ public class Hooks {
 
     @AfterStep
     public void afterEachStep(Scenario scenario) {
-        String stepName = Normalizer.normalize(scenario.getName(), Normalizer.Form.NFD)
-                .replaceAll("[^\\p{ASCII}]", "")
-                .toLowerCase()
-                .replaceAll("[^a-z0-9]", "_");
-        ScreenshotUtil.takeScreenshot(DriverFactory.getDriver(), "step_" + stepName);
+        if (scenario.isFailed()) {
+            String stepName = Normalizer.normalize(scenario.getName(), Normalizer.Form.NFD)
+                    .replaceAll("[^\\p{ASCII}]", "")
+                    .toLowerCase()
+                    .replaceAll("[^a-z0-9]", "_");
+            ScreenshotUtil.takeScreenshot(DriverFactory.getDriver(), "step_" + stepName);
+        }
     }
 }

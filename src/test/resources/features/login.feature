@@ -11,6 +11,8 @@ Feature: Login no sistema OrangeHRM
       | Admin   | admin123 |
       | admin   | admin123 |
       | ADMIN   | admin123 |
+      | ADMIN   | admin124 |
+      | ADMIN   | admin125 |
 
   @login @testes-funcionais @login-negativo
   Scenario Outline: Login com credenciais inválidas

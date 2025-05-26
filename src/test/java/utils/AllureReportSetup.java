@@ -1,16 +1,21 @@
 package utils;
 
-import java.io.*;
-import java.nio.file.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Properties;
 
-import static java.nio.file.Paths.*;
-import static utils.Log.INFO;
-import static utils.Log.ERROR;
+import static java.lang.System.*;
+import static java.nio.file.Paths.get;
+import static utils.Logger.ERROR;
+import static utils.Logger.INFO;
 
 public class AllureReportSetup {
 
-    private static final Path RESULTS_FOLDER = get(System.getProperty("allure.results.folder", "allure-results"));
+    private static final Path RESULTS_FOLDER = get(getProperty("allure.results.folder", "allure-results"));
     private static final Path SCREENSHOTS_FOLDER = RESULTS_FOLDER.resolve("screenshots");
     private static final Path PROPERTIES_FILE_PATH = RESULTS_FOLDER.resolve("environment.properties");
 
@@ -18,7 +23,7 @@ public class AllureReportSetup {
         try {
             recreateFolder(SCREENSHOTS_FOLDER);
             recreateFolder(RESULTS_FOLDER);
-            String environment = System.getProperty("env", "DEV");
+            String environment = getProperty("env", "LOCALHOST");
             writeToPropertiesFile("ENVIRONMENT", environment);
         } catch (IOException e) {
             ERROR("ERROR PREPARING ALLURE FOLDERS: " + e.getMessage());

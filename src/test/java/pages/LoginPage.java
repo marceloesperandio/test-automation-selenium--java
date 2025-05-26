@@ -60,7 +60,6 @@ public class LoginPage {
     /**
      * Assertions
      */
-
     public boolean isOnDashboard() {
         return wait.until(ExpectedConditions.visibilityOf(dashboardTitle)).isDisplayed();
     }
