@@ -1,0 +1,70 @@
+# IDEs
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+dist/
+coverage/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.venv/
+env/
+venv/
+
+# Java
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven
+.mvn/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Test Reports
+allure-results/
+allure-report/
+test-output/
+reports/
+cypress/videos/
+cypress/screenshots/
+playwright-report/
+playwright/.cache/
+
+# Selenium / Playwright / Appium Cache
+output/
+tmp/
+*.log
+.trash/
+
+# Jupyter Notebook checkpoints (Python)
+.ipynb_checkpoints/
+
+# Misc
+*.swp
+*.swo
+*.bak
+*.tmp
