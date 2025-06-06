@@ -3,7 +3,7 @@ package utils;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Log {
+public class Logger {
 
     private static final String ESCAPE_OUTPUT_PROPERTY = "org.uncommons.reportng.escape-output";
 

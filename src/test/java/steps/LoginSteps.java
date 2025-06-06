@@ -13,6 +13,9 @@ import static utils.ScreenshotUtil.takeScreenshot;
 
 public class LoginSteps {
 
+//TODO:
+// implementar forma de validar os cenários sem considerar o Hook
+
     private WebDriver driver;
     private LoginPage loginPage;
 

@@ -1,6 +1,6 @@
 Feature: Login no sistema OrangeHRM
 
-  @login @testes-funcionais @login-positivo
+  @wip @login @testes-funcionais @login-positivo
   Scenario Outline: Login com credenciais válidas
     Given o usuário acessa a página de login do OrangeHRM
     When o usuário informa o nome de usuário "<usuario>" e senha "<senha>"
@@ -11,6 +11,8 @@ Feature: Login no sistema OrangeHRM
       | Admin   | admin123 |
       | admin   | admin123 |
       | ADMIN   | admin123 |
+      | ADMIN   | admin124 |
+      | ADMIN   | admin125 |
 
   @login @testes-funcionais @login-negativo
   Scenario Outline: Login com credenciais inválidas

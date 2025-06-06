@@ -14,6 +14,12 @@ public class LoginPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        PageFactory.initElements(driver, this);
+    }
+
     @FindBy(name = "username")
     private WebElement inputUsername;
 
@@ -28,12 +34,6 @@ public class LoginPage {
 
     @FindBy(css = "p.oxd-text.oxd-text--p.oxd-alert-content-text")
     private WebElement mensagemErroLogin;
-
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        PageFactory.initElements(driver, this);
-    }
 
     /**
      * Inputs
@@ -60,7 +60,6 @@ public class LoginPage {
     /**
      * Assertions
      */
-
     public boolean isOnDashboard() {
         return wait.until(ExpectedConditions.visibilityOf(dashboardTitle)).isDisplayed();
     }
